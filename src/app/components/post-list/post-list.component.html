@@ -1,0 +1,11 @@
+<article class="postListContainer">
+  <ul class="postList">
+    @for(post of posts; track post.id){
+    <post-card
+      imageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Mussum.jpg/800px-Mussum.jpg"
+      title="{{ post.title }}"
+      id="{{ post.id }}"
+    />
+    }
+  </ul>
+</article>

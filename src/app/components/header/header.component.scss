@@ -1,0 +1,22 @@
+@import "index";
+
+.header {
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid $secondary-color;
+    padding-bottom: 1rem;
+    width: 100%;
+  }
+  &__text {
+    font-size: 5rem;
+    color: $secondary-color;
+    font-family: Kanit;
+    display: inline-block;
+    text-align: center;
+  }
+}

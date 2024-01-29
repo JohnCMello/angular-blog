@@ -1,0 +1,25 @@
+@import "index";
+
+.postListContainer {
+  display: flex;
+  justify-content: center;
+  .postList {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    gap: 2rem;
+    margin: 0 2rem;
+    @include screen-size("tablet") {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 81rem;
+      margin: 0 4rem;
+    }
+    @include screen-size("desktop") {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 120rem;
+      margin: 0;
+    }
+  }
+}
