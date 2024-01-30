@@ -1,28 +1,40 @@
 @import "index";
+
 .cardContainer {
   max-width: 40rem;
+  height: 100%;
   .card {
+    min-height: 100%;
     display: flex;
-    cursor: pointer;
-    color: black;
-    text-decoration: none;
     gap: 1rem;
-    min-width: 16rem;
-    border: 1px solid black;
-    padding: 0.8rem 0.4rem;
+    box-shadow: 4px 4px 0px 1px $gray-dark, 2px 2px 25px -8px $gray-light;
+    -webkit-box-shadow: 4px 4px 0px 1px $gray-dark,
+      2px 2px 25px -8px $gray-light;
+    -moz-box-shadow: 4px 4px 0px 1px $gray-dark, 2px 2px 25px -8px $gray-light;
+
+    cursor: pointer;
+
+    color: $gray-darker;
     font-family: Martel Sans;
+    min-width: 16rem;
+    border: 1px solid $gray;
+    padding: 0.8rem 0.4rem;
+    text-decoration: none;
 
     &__imageContainer {
       display: flex;
-      max-width: 30%;
-      aspect-ratio: 1/1;
       min-width: 8rem;
       min-height: 8rem;
+      width: 100%;
+      aspect-ratio: 1/1;
+      flex-shrink: 0;
+
       @include screen-size("tablet") {
         max-width: 40%;
       }
       &__image {
-        width: 100%;
+        min-width: 100%;
+        max-width: 15rem;
         object-fit: cover;
       }
     }
@@ -38,15 +50,17 @@
         -webkit-line-clamp: 3;
         display: -webkit-box;
         text-transform: uppercase;
+
         @include screen-size("tablet") {
           -webkit-line-clamp: 4;
         }
         @include screen-size("desktop") {
-          -webkit-line-clamp: 6;
+          -webkit-line-clamp: 5;
         }
       }
       &__authorName {
         text-transform: uppercase;
+        color: $secondary-color;
       }
     }
   }
