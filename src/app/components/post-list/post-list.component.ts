@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostCardComponent } from '@components/post-card/post-card.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { Author, PostAndAuthor, Posts } from 'app/types/types';
+import { PostsAndAuthors } from 'app/types';
 import { PostsService } from 'app/services/posts.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { PostsService } from 'app/services/posts.service';
   styleUrl: './post-list.component.scss',
 })
 export class PostListComponent implements OnInit {
-  posts: PostAndAuthor[] = [];
+  posts: PostsAndAuthors[] = [];
   currentPage: number = 1;
   pageSize: number = 12;
   hidePageSize: boolean = true;
@@ -25,7 +25,7 @@ export class PostListComponent implements OnInit {
 
   fetchPosts(): void {
     this.postsService.getPostsAndAuthors().subscribe({
-      next: (posts: PostAndAuthor[]) => {
+      next: (posts: PostsAndAuthors[]) => {
         if (Array.isArray(posts)) {
           this.posts = posts.sort(
             (a, b) => a.createdAt.getTime() - b.createdAt.getTime()

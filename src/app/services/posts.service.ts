@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Author, PostAndAuthor } from 'app/types/types';
+import { Author, PostsAndAuthors } from 'app/types';
 import { Observable, forkJoin, map, switchMap } from 'rxjs';
 
 @Injectable({
@@ -22,8 +22,8 @@ export class PostsService {
     return new Date(randomTimestamp);
   }
 
-  getPostsAndAuthors(): Observable<PostAndAuthor[]> {
-    return this.http.get<PostAndAuthor[]>(this.postsURL).pipe(
+  getPostsAndAuthors(): Observable<PostsAndAuthors[]> {
+    return this.http.get<PostsAndAuthors[]>(this.postsURL).pipe(
       // Using switchMap to switch to the forkJoin observable
       switchMap((posts) => {
         // Map each post to an observable of author data
@@ -38,7 +38,7 @@ export class PostsService {
             return posts.map((post, index) => {
               return {
                 ...post,
-                author: authors[index],
+                author: authors[index].name,
                 createdAt: this.getRandomTimestamp(),
               };
             });
