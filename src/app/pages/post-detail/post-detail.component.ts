@@ -1,19 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Component } from '@angular/core';
+import { PostDetailComponent } from '@components/post-detail/post-detail.component';
 
 @Component({
   selector: 'app-post-detail',
   standalone: true,
-  imports: [],
+  imports: [PostDetailComponent],
   templateUrl: './post-detail.component.html',
   styleUrl: './post-detail.component.scss',
 })
-export class PostDetailComponent implements OnInit {
-  id: string | null | undefined;
-
-  constructor(private activatedRoute: ActivatedRoute) {}
-
-  ngOnInit(): void {
-    this.id = this.activatedRoute.snapshot.paramMap.get('id');
-  }
-}
+export class PostDetailPageComponent {}

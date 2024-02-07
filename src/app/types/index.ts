@@ -1,3 +1,10 @@
+export type Post = {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+};
+
 export type Author = {
   id?: number;
   name?: string;
@@ -37,4 +44,14 @@ export type PostsAndAuthors = {
   body: string;
   createdAt: Date;
   author: string | undefined;
+};
+
+export type Comment = {
+  postId: number;
+  id: number;
+  name: string;
+  email: string;
+  body: string;
+  createdAt: string;
+  sorter: Date;
 };

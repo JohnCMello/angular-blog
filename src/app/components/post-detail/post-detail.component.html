@@ -1,0 +1,56 @@
+<section class="postDetail">
+  <div class="postDetail__backButtonContainer">
+    <button
+      (click)="backToPosts()"
+      class="postDetail__backButtonContainer__button"
+    >
+      Back to list
+    </button>
+  </div>
+  <header class="postDetail__header">
+    <h1 class="postDetail__header__title">{{ post.title }}</h1>
+    <figure class="postDetail__header__imageContainer">
+      <img
+        class="postDetail__header__imageContainer__image"
+        src="https://picsum.photos/600/600"
+        alt="{{ post.title }}"
+      />
+    </figure>
+  </header>
+  <article class="postDetail__content">
+    <!-- texts from body are too short, fake a longer text -->
+    <p class="postDetail__content__text">
+      {{ post.body.charAt(0).toUpperCase() + post.body.slice(1) }}
+      {{ post.body }}.
+      {{ post.body.charAt(0).toUpperCase() + post.body.slice(1) }}
+      {{ post.body }}.
+    </p>
+  </article>
+</section>
+
+<section class="comments">
+  <ul class="comments__list">
+    @for(comment of comments; track trackById){
+    <li class="comments__listItem">
+      <figure class="comments__listItem__imageContainer">
+        <img
+          class="comments__listItem__imageContainer__image"
+          src="https://picsum.photos/400/400"
+          alt=""
+        />
+      </figure>
+      <div class="comments__listItem__content">
+        <div class="comments__listItem__content__author">
+          <span class="comments__listItem__content__author__name">{{
+            comment.email
+          }}</span>
+          <span class="comments__listItem__content__author__date">
+            {{ comment.createdAt }}
+          </span>
+        </div>
+        <p>{{ comment.body.charAt(0).toUpperCase() + post.body.slice(1) }}</p>
+      </div>
+    </li>
+    }
+  </ul>
+</section>

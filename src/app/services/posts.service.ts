@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { getRandomTimestamp } from 'app/helpers/getRandomTimeStamp';
 import { Author, PostsAndAuthors } from 'app/types';
 import { Observable, forkJoin, map, switchMap } from 'rxjs';
 
@@ -13,14 +14,6 @@ export class PostsService {
     'https://jsonplaceholder.typicode.com/users';
 
   constructor(private http: HttpClient) {}
-
-  getRandomTimestamp() {
-    const timestamp2020 = new Date('2020-01-01').getTime();
-    const todayTimestamp = new Date().getTime();
-    const randomOffset = Math.random() * (todayTimestamp - timestamp2020);
-    const randomTimestamp = timestamp2020 + randomOffset;
-    return new Date(randomTimestamp);
-  }
 
   getPostsAndAuthors(): Observable<PostsAndAuthors[]> {
     return this.http.get<PostsAndAuthors[]>(this.postsURL).pipe(
@@ -39,7 +32,7 @@ export class PostsService {
               return {
                 ...post,
                 author: authors[index].name,
-                createdAt: this.getRandomTimestamp(),
+                createdAt: getRandomTimestamp(),
               };
             });
           })

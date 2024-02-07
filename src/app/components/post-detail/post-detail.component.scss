@@ -1,0 +1,121 @@
+@import "index";
+
+.postDetail {
+  margin: 0 2rem 4rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @include screen-size("mobile") {
+    margin: 0 4rem 4rem;
+  }
+
+  &__backButtonContainer {
+    width: 100%;
+    margin-bottom: 2rem;
+    &__button {
+      border: 1px solid $gray;
+      background-color: $gray-lightest;
+      color: $gray-darker;
+      padding: 0.4rem 1rem;
+      font-family: Kanit;
+      font-size: 1.6rem;
+      box-shadow: 2px 2px 0px 1px $gray-dark, 2px 2px 25px -8px $gray-light;
+      -webkit-box-shadow: 2px 2px 0px 1px $gray-dark,
+        2px 2px 25px -8px $gray-light;
+      -moz-box-shadow: 2px 2px 0px 1px $gray-dark, 2px 2px 25px -8px $gray-light;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    &__title {
+      text-align: center;
+      font-size: 3rem;
+      text-transform: uppercase;
+      font-family: Kanit;
+      color: $gray-darkest;
+    }
+    &__imageContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 40rem;
+      &__image {
+        width: 100%;
+      }
+    }
+  }
+
+  &__content {
+    max-width: 70rem;
+    &__text {
+      font-size: 1.6rem;
+      line-height: 2rem;
+      font-family: Martel Sans;
+    }
+  }
+}
+
+.comments {
+  display: flex;
+  justify-content: center;
+  margin: 0 2rem;
+  @include screen-size("mobile") {
+    margin: 0 4rem;
+  }
+  &__list {
+    max-width: 80rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+  &__listItem {
+    display: flex;
+    gap: 2rem;
+    padding: 0.6rem 0.4rem;
+    border: 1px solid $gray;
+    box-shadow: 4px 4px 0px 1px $gray-dark, 2px 2px 25px -8px $gray-light;
+    -webkit-box-shadow: 4px 4px 0px 1px $gray-dark,
+      2px 2px 25px -8px $gray-light;
+    -moz-box-shadow: 4px 4px 0px 1px $gray-dark, 2px 2px 25px -8px $gray-light;
+    &__imageContainer {
+      min-width: 6rem;
+      min-height: 6rem;
+      width: 100%;
+      aspect-ratio: 1/1;
+      max-width: 8rem;
+
+      &__image {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    &__content {
+      font-size: 1.6rem;
+      word-break: keep-all;
+      width: 100%;
+      &__author {
+        display: flex;
+        gap: 0.4rem;
+        flex-direction: column;
+        padding: 0.6rem 0;
+        @include screen-size("tablet") {
+          flex-direction: row;
+          gap: 1rem;
+          align-items: center;
+        }
+        &__name {
+          font-size: 1.4rem;
+        }
+        &__date {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

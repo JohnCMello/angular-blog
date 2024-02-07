@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { PostDetailComponent } from '@pages/post-detail/post-detail.component';
+import { HomePageComponent } from './pages/home/home.component';
+import { PostDetailPageComponent } from '@pages/post-detail/post-detail.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: HomePageComponent,
   },
   {
     path: 'posts/:id',
-    component: PostDetailComponent,
+    component: PostDetailPageComponent,
   },
 ];
