@@ -3,24 +3,22 @@
 .cardContainer {
   max-width: 40rem;
   height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.4s;
+  &:hover {
+    transform: rotateX(-4deg) rotateY(-4deg);
+  }
   .card {
     min-height: 100%;
     display: flex;
     gap: 1rem;
-    box-shadow: 4px 4px 0px 1px $gray-dark, 2px 2px 25px -8px $gray-light;
-    -webkit-box-shadow: 4px 4px 0px 1px $gray-dark,
-      2px 2px 25px -8px $gray-light;
-    -moz-box-shadow: 4px 4px 0px 1px $gray-dark, 2px 2px 25px -8px $gray-light;
-
     cursor: pointer;
-
     color: $gray-darker;
     font-family: Martel Sans;
     min-width: 16rem;
-    border: 1px solid $gray;
     padding: 0.8rem 0.4rem;
     text-decoration: none;
-
+    @include borderShadowCard;
     &__imageContainer {
       min-width: 8rem;
       min-height: 8rem;

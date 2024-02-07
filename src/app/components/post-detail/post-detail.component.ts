@@ -1,13 +1,14 @@
-import { Location } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CommentCardComponent } from '@components/comment-card/comment-card.component';
 import { SinglePostService } from 'app/services/single-post.service';
 import { Comment, Post } from 'app/types';
 
 @Component({
   selector: 'comp-post-detail',
   standalone: true,
-  imports: [],
+  imports: [CommentCardComponent, CommonModule],
   templateUrl: './post-detail.component.html',
   styleUrl: './post-detail.component.scss',
 })
