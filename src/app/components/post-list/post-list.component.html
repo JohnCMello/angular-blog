@@ -1,11 +1,25 @@
-<article class="postListContainer">
+<section class="postListContainer">
   <ul class="postList">
-    @for(post of posts; track post.id){
+    @for(post of slicedPosts; track trackById){
     <post-card
-      imageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Mussum.jpg/800px-Mussum.jpg"
+      imageUrl="{{
+        post.id % 2 === 0
+          ? 'https://xsgames.co/randomusers/avatar.php?g=female'
+          : 'https://xsgames.co/randomusers/avatar.php?g=male'
+      }}"
       title="{{ post.title }}"
       id="{{ post.id }}"
+      author="{{ post.author }}"
     />
     }
   </ul>
-</article>
+  <mat-paginator
+    class="pagination"
+    [length]="posts.length"
+    [pageSize]="pageSize"
+    (page)="currentPage = $event.pageIndex + 1"
+    [hidePageSize]="hidePageSize"
+    aria-label="Select page"
+  >
+  </mat-paginator>
+</section>

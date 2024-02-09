@@ -1,5 +1,5 @@
 <li class="cardContainer">
-  <a class="card" routerLink="{{ id }}">
+  <a class="card" routerLink="/posts/{{ id }}">
     <figure class="card__imageContainer">
       <img
         class="card__imageContainer__image"
@@ -10,7 +10,7 @@
 
     <div class="card__postInfoContainer">
       <h2 class="card__postInfoContainer__title">{{ title }}</h2>
-      <span class="card__postInfoContainer__authorName">Name PlaceHolder</span>
+      <span class="card__postInfoContainer__authorName">{{ author }}</span>
     </div>
   </a>
 </li>

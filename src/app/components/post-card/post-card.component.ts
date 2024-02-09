@@ -13,6 +13,7 @@ export class PostCardComponent {
   @Input() imageUrl: string = '';
   @Input() title: string = '';
   @Input() id: string = '';
+  @Input() author: string = '';
 
   constructor() {}
 }

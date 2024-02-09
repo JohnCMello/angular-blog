@@ -9,3 +9,22 @@
     @error "Breakpoint '#{$breakpoint}' not found in the global breakpoints map.";
   }
 }
+
+@mixin borderShadowCard() {
+  border: 1px solid $gray;
+  box-shadow: 4px 4px 0px 1px $gray-dark, 2px 2px 20px 2px $gray-lighter;
+  -webkit-box-shadow: 4px 4px 0px 1px $gray-dark, 2px 2px 20px 2px $gray-lighter;
+  -moz-box-shadow: 4px 4px 0px 1px $gray-dark, 2px 2px 20px 2px $gray-lighter;
+}
+@mixin borderShadowButton() {
+  border: 1px solid $gray;
+  box-shadow: 2px 2px 0px 1px $gray-dark, 2px 2px 20px 2px $gray-lighter;
+  -webkit-box-shadow: 2px 2px 0px 1px $gray-dark, 2px 2px 20px 2px $gray-lighter;
+  -moz-box-shadow: 2px 2px 0px 1px $gray-dark, 2px 2px 20px 2px $gray-lighter;
+}
+
+@mixin shadow() {
+  box-shadow: 4px 4px 20px 4px $gray;
+  -webkit-box-shadow: 4px 4px 20px 4px $gray;
+  -moz-box-shadow: 4px 4px 20px 4px $gray;
+}

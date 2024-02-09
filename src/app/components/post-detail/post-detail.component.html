@@ -1,0 +1,40 @@
+<section class="postDetail">
+  <div class="postDetail__backButtonContainer">
+    <button
+      (click)="backToPosts()"
+      class="postDetail__backButtonContainer__button"
+    >
+      Back to list
+    </button>
+  </div>
+  <header class="postDetail__header">
+    <h1 class="postDetail__header__title">{{ post.title }}</h1>
+    <figure class="postDetail__header__imageContainer">
+      <img
+        class="postDetail__header__imageContainer__image"
+        src="https://picsum.photos/600/600"
+        alt="{{ post.title }}"
+      />
+    </figure>
+  </header>
+  <article class="postDetail__content">
+    <!-- texts from body are too short, fake a longer text -->
+    <p class="postDetail__content__text">
+      {{ post.body.charAt(0).toUpperCase() + post.body.slice(1) }}
+      {{ post.body }}.
+      {{ post.body.charAt(0).toUpperCase() + post.body.slice(1) }}
+      {{ post.body }}.
+    </p>
+  </article>
+</section>
+
+<section class="comments">
+  <div class="comments__titleContainer">
+    <h2 class="comments__titleContainer__title">Comments</h2>
+  </div>
+  <ul class="comments__list">
+    @for(comment of comments; track trackById){
+    <comp-comment-card [comment]="comment" />
+    }
+  </ul>
+</section>

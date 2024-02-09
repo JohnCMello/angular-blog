@@ -1,16 +1,18 @@
-// Colors
-$primary-color: #007bff;
-$secondary-color: #6c757d;
-$success-color: #28a745;
-$danger-color: #dc3545;
-$warning-color: #ffc107;
-$info-color: #17a2b8;
-$light-color: #f8f9fa;
-$dark-color: #343a40;
+// Grayscale Palette (Darker Shades)
+$gray-lightest: #e0e0e0;
+$gray-lighter: #c0c0c0;
+$gray-light: #a0a0a0;
+$gray: #808080;
+$gray-dark: #606060;
+$gray-darker: #404040;
+$gray-darkest: #202020;
 
-// Spacings
-$spacing-xs: 4px;
-$spacing-sm: 8px;
-$spacing-md: 16px;
-$spacing-lg: 24px;
-$spacing-xl: 32px;
+// Blue as Secondary Color
+$primary-color: $gray-dark; // Choose the shade of gray you prefer
+$secondary-color: #007bff; // Blue
+
+// Success, Danger, Warning, Info
+$success-color: #28a745; // Green
+$danger-color: #dc3545; // Red
+$warning-color: #ffc107; // Yellow
+$info-color: #17a2b8; // Cyan
